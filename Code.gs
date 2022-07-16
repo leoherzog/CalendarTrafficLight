@@ -8,7 +8,7 @@ function doGet(request) {
   fiveMinutesFromNow.setMinutes(fiveMinutesFromNow.getMinutes() + 5);
 
   // will be replaced with working hours api, when that's released
-  if (now.getHours() < 8 || now.getHours() >= 16) {
+  if (now.getHours() < 8 || now.getHours() >= 16 || now.getDay() === 0 || now.getDay() === 6) {
     return ContentService.createTextOutput('n').setMimeType(ContentService.MimeType.TEXT);
   }
 
